@@ -5,43 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>0</title>
     
-    
-    <script>
-        const allowedDomain = "forjamaroc.com";
-        
-        function checkReferrer() {
-            if (window.location.protocol === "file:") return;
-
-            const isIframe = window !== window.top;
-            const referrer = document.referrer;
-            let isAllowed = false;
-
-            if (isIframe && referrer) {
-                try {
-                    const refUrl = new URL(referrer);
-                    if (refUrl.hostname.includes(allowedDomain)) {
-                        isAllowed = true;
-                    }
-                } catch (e) {
-                    console.error("Invalid referrer URL");
-                }
-            }
-
-
-            if (!isAllowed) {
-                document.documentElement.innerHTML = `
-                    <body style="background:#000; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial, sans-serif; margin:0;">
-                        <div style="text-align:center;">
-                            <h2>Video Unavailable</h2>
-                            <p style="color:#aaa; margin-top:8px;">This video is currently unavailable.</p>
-                        </div>
-                    </body>`;
-            }
-        }
-        
-        checkReferrer();
-    </script>
-
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://snrt.player.easybroadcast.io">
     <link rel="preconnect" href="https://blogger.googleusercontent.com">
@@ -63,7 +26,6 @@
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
-            /* Disable text selection */
             user-select: none; 
             -webkit-user-select: none;
         }
@@ -79,10 +41,9 @@
             overflow: hidden;
         }
         
-
         #player-frame {
             width: 100vw;
-            height: 56.25vw; 
+            height: 56.25vw;
             max-height: 100vh;
             max-width: 177.78vh;
             border: none;
@@ -134,70 +95,84 @@
 </head>
 <body>
     
-    <div class="loading-image" id="loadingImage">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZmRslaovrVP07DAR3DXHelJJx1FOAqt_-LyC5mGL0rC6nw28ZMku-kZ9C1gfdd09gRI85vsKgpE19r50rwM3_2rtMn_qGQg6Wk1KEaQy1GYWxpLDoi-Qt9gCa_ToPpsFrwTLzVPCEaYg7V_-E79uUIoUlYNVccisZZq8So82F9iEy7SkDMI2ZGlbgq-h4/s320/Untitled%20design%20-%202025-09-20T011659.168.png" alt="Loading">
-    </div>
-    
-    <div id="player-container">
 
-        <div id="user-counter">
-            <i class="fas fa-users"></i>
-            <span id="viewer-count"></span> 
-        </div>
-       
-        <iframe id="player-frame" 
-                src="https://snrt.player.easybroadcast.io/events/73_laayoune_pgagr52"
-                allow="autoplay; fullscreen"
-                onload="onPlayerLoad()"></iframe>
-    </div>
-    
+    <div id="_0xroot"></div>
+
     <script>
 
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        document.onkeydown = function(e) {
+            if (e.keyCode === 123) return false; 
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) return false; 
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 67) return false; 
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) return false; 
+            if (e.ctrlKey && e.keyCode === 85) return false;
+        };
 
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const userCounter = document.getElementById('user-counter');
+        const _0xdf1 = atob("Zm9yamFtYXJvYy5jb20="); 
+        const _0xdf2 = atob("aHR0cHM6Ly9zbnJ0LnBsYXllci5lYXN5YnJvYWRjYXN0LmlvL2V2ZW50cy83M19sYWF5b3VuZV9wZ2FncjUy");
+        function _0xbuildPlayer() {
+            document.getElementById('_0xroot').innerHTML = `
+                <div class="loading-image" id="_0xld">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZmRslaovrVP07DAR3DXHelJJx1FOAqt_-LyC5mGL0rC6nw28ZMku-kZ9C1gfdd09gRI85vsKgpE19r50rwM3_2rtMn_qGQg6Wk1KEaQy1GYWxpLDoi-Qt9gCa_ToPpsFrwTLzVPCEaYg7V_-E79uUIoUlYNVccisZZq8So82F9iEy7SkDMI2ZGlbgq-h4/s320/Untitled%20design%20-%202025-09-20T011659.168.png" alt="Loading">
+                </div>
+                <div id="player-container">
+                    <div id="user-counter">
+                        <i class="fas fa-users"></i>
+                        <span id="_0xvc"></span> 
+                    </div>
+                    <iframe id="player-frame" src="${_0xdf2}" allow="autoplay; fullscreen" onload="_0xhideLd()"></iframe>
+                </div>
+            `;
+            _0xinitC();
+        }
 
+        window._0xhideLd = function() { document.getElementById('_0xld').classList.add('hidden'); };
 
-            function handleFullscreenChange() {
+        function _0xinitC() {
+            const _0xuc = document.getElementById('user-counter');
+            function _0xfs() {
                 if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-                    userCounter.style.display = 'none';
+                    _0xuc.style.display = 'none';
                 } else {
-                    userCounter.style.display = 'flex';
+                    _0xuc.style.display = 'flex';
                 }
             }
+            document.addEventListener('fullscreenchange', _0xfs);
+            document.addEventListener('webkitfullscreenchange', _0xfs);
+            
+            const _0xve = document.getElementById('_0xvc');
+            let _0xcur = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
+            _0xve.textContent = _0xcur;
 
-            document.addEventListener('fullscreenchange', handleFullscreenChange);
-            document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-            document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-            document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-
-
-            const viewerCountElement = document.getElementById('viewer-count');
-            const minViewers = 50; 
-            const maxViewers = 100; 
-
-            let currentViewers = Math.floor(Math.random() * (maxViewers - minViewers + 1)) + minViewers;
-            viewerCountElement.textContent = currentViewers;
-
-            function updateViewerCount() {
-                const change = Math.floor(Math.random() * 5) - 2; 
-                let newViewers = currentViewers + change;
-                newViewers = Math.max(minViewers, Math.min(maxViewers, newViewers));
-                currentViewers = newViewers;
-                viewerCountElement.textContent = currentViewers;
-            }
-
-            setInterval(updateViewerCount, 3000);
-        });
-        
-        function onPlayerLoad() {
-            const loadingImage = document.getElementById('loadingImage');
-            loadingImage.classList.add('hidden');
+            setInterval(function() {
+                let _0xn = _0xcur + (Math.floor(Math.random() * 5) - 2);
+                _0xn = Math.max(50, Math.min(100, _0xn));
+                _0xcur = _0xn;
+                _0xve.textContent = _0xcur;
+            }, 3000);
         }
+
+
+        (function _0xval() {
+            if (window.location.protocol === "file:") return _0xbuildPlayer();
+            let _0xok = false;
+            if (window !== window.top && document.referrer) {
+                try { if (new URL(document.referrer).hostname.includes(_0xdf1)) _0xok = true; } catch (e) {}
+            }
+            if (_0xok) {
+                _0xbuildPlayer();
+            } else {
+                document.documentElement.innerHTML = `
+                    <body style="background:#000; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial, sans-serif; margin:0;">
+                        <div style="text-align:center;">
+                            <h2>Video Unavailable</h2>
+                            <p style="color:#aaa; margin-top:8px;">This video is currently unavailable.</p>
+                        </div>
+                    </body>`;
+            }
+        })();
     </script>
 </body>
 </html>
