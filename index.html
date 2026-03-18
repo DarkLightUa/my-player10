@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Player</title>
+    <title>0</title>
     
-    <!-- === SECURITY SCRIPT: DOMAIN PROTECTION === -->
+    
     <script>
         const allowedDomain = "forjamaroc.com";
         
@@ -27,7 +27,7 @@
                 }
             }
 
-            // Generic "Unavailable" message
+
             if (!isAllowed) {
                 document.documentElement.innerHTML = `
                     <body style="background:#000; color:#fff; display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial, sans-serif; margin:0;">
@@ -41,7 +41,6 @@
         
         checkReferrer();
     </script>
-    <!-- ========================================== -->
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://snrt.player.easybroadcast.io">
@@ -80,12 +79,12 @@
             overflow: hidden;
         }
         
-        /* --- BULLETPROOF 16:9 CENTERING TRICK --- */
+
         #player-frame {
             width: 100vw;
-            height: 56.25vw; /* 9/16 aspect ratio calculated */
+            height: 56.25vw; 
             max-height: 100vh;
-            max-width: 177.78vh; /* 16/9 aspect ratio calculated */
+            max-width: 177.78vh;
             border: none;
             background: #000;
             z-index: 1;
@@ -140,7 +139,7 @@
     </div>
     
     <div id="player-container">
-        <!-- User Counter Icon & Number -->
+
         <div id="user-counter">
             <i class="fas fa-users"></i>
             <span id="viewer-count"></span> 
@@ -153,16 +152,16 @@
     </div>
     
     <script>
-        // === SECURITY: DISABLE RIGHT CLICK ===
+
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
 
-        // === PLAYER & COUNTER LOGIC ===
+
         document.addEventListener('DOMContentLoaded', function() {
             const userCounter = document.getElementById('user-counter');
 
-            // Fullscreen Logic
+
             function handleFullscreenChange() {
                 if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
                     userCounter.style.display = 'none';
@@ -176,7 +175,7 @@
             document.addEventListener('mozfullscreenchange', handleFullscreenChange);
             document.addEventListener('MSFullscreenChange', handleFullscreenChange);
 
-            // Viewer Count Logic
+
             const viewerCountElement = document.getElementById('viewer-count');
             const minViewers = 50; 
             const maxViewers = 100; 
